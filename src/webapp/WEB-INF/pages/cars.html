@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars from the list</title>
+</head>
+<body>
+
+<h1> Cars from the list </h1>
+<br>
+
+<table border="bold">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>Car model</th>
+        <th>Year of production</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${carList}">
+        <td th:text="${car.id}"></td>
+        <td th:text="${car.model}"></td>
+        <td th:text="${car.yearOfProduction}"></td>
+    </tr>
+    </tbody>
+
+</table>
+
+<br>
+
+<h2>Enter number of cars to show</h2>
+
+<form action="cars" method="get">
+    <input type="text" name="count"
+           placeholder="Number of cars to show"
+    style="padding: initial"/>
+    <input type="submit" value="Get cars by number">
+
+</form>
+<br>
+<br>
+<button>
+    <a href="cars" style="text-decoration: none">Show all cars</a>
+</button>
+
+</body>
+</html>
